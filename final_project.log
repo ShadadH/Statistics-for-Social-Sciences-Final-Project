@@ -1,0 +1,1319 @@
+-----------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/jinqingmei/Desktop/stats/Final Project/final_project.log
+  log type:  text
+ opened on:  22 Apr 2022, 11:21:51
+
+. set more off
+
+. 
+. use Combined.dta
+
+. 
+end of do-file
+
+. 
+. import excel "/Users/jinqingmei/Downloads/GDP.xls", sheet("Data") firstrow clear
+(66 vars, 266 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep CountryName IndicatorName BC BH BL
+
+. rename BC GDPData2010
+
+. rename BH GDPData2015
+
+. rename BL GDPData2019
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. save GDP.dta
+file GDP.dta saved
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. merge 1:1 CountryName using GDP.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. 
+. 
+. import excel "/Users/jinqingmei/Downloads/drive-download-20220422T074906Z-001/Primary Gross.xls", s
+> heet("Data") firstrow clear
+(65 vars, 266 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep CountryName IndicatorName BC BH BL
+
+. rename BC PEData2010
+
+. rename BH PEData2015
+
+. rename BL PEData2019
+
+. save PE.dta
+file PE.dta saved
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using PE.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use PE.dta
+no; dataset in memory has changed since last saved
+r(4);
+
+end of do-file
+
+r(4);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use PE.dta
+no; dataset in memory has changed since last saved
+r(4);
+
+end of do-file
+
+r(4);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use PE.dta
+no; dataset in memory has changed since last saved
+r(4);
+
+end of do-file
+
+r(4);
+
+. use "/Users/jinqingmei/Desktop/stats/Final Project/PE.dta"
+no; dataset in memory has changed since last saved
+r(4);
+
+. 
+. import excel "/Users/jinqingmei/Downloads/drive-download-20220422T074906Z-001/Primary Gross.xls", s
+> heet("Data") firstrow clear
+(65 vars, 266 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep CountryName IndicatorName BC BH BL
+
+. rename BC PEData2010
+
+. rename BH PEData2015
+
+. rename BL PEData2019
+
+. save PE.dta
+file PE.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. save PE.dta
+file PE.dta saved
+
+. 
+end of do-file
+
+. 
+. 
+. import excel "/Users/jinqingmei/Downloads/Secondary Gross.xls", sheet("Data") firstrow clear
+(65 vars, 266 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep CountryName IndicatorName BC BH BL
+
+. rename BC SEData2010
+
+. rename BH SEData2015
+
+. rename BL SEData2019
+
+. save SE.dta
+file SE.dta saved
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using PE.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using SE.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
+. 
+. import excel "/Users/jinqingmei/Downloads/drive-download-20220422T074906Z-001/Tertiary Gross.xls", 
+> sheet("Data") firstrow clear
+(65 vars, 266 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep CountryName IndicatorName BC BH BL
+
+. rename BC TEData2010
+
+. rename BH TEData2015
+
+. rename BL TEData2019
+
+. save TE.dta
+file TE.dta saved
+
+. 
+end of do-file
+
+. save "TE.dta", replace
+file TE.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using TE.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable PCData2010 ["Primary Completion Rate in 2010"]
+invalid syntax
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable PCData2010 "Primary Completion Rate in 2010"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable PCData2015 "Primary Completion Rate in 2015"
+
+. label variable PCData2019 "Primary Completion Rate in 2019"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable MRData2015 "2015 Mortality Rate Data. Cause of death, by communicable diseases and maternal, prenatal a
+> nd nutrition conditions, % of total"
+note: label truncated to 80 characters
+
+. label variable MRData2019 "2019 Mortality Rate Data. Cause of death, by communicable diseases and maternal, prenatal a
+> nd nutrition conditions, % of total"
+note: label truncated to 80 characters
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable EEData2010 "2010 Government Expenditure on Education Data. Government expenditure on education, total, 
+> % of government expenditure."
+note: label truncated to 80 characters
+
+. label variable EEData2015 "2015 Government Expenditure on Education Data. Government expenditure on education, total, 
+> % of government expenditure."
+note: label truncated to 80 characters
+
+. label variable EEData2019 "2019 Government Expenditure on Education Data. Government expenditure on education, total, 
+> % of government expenditure."
+note: label truncated to 80 characters
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable GDPData2010 "2010 GDP, current US$"
+variable GDPData2010 not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable PEData2010 "2010 School enrollment, primary (% gross) Gross"
+
+. label variable PEData2015 "2015 School enrollment, primary (% gross) Gross"
+
+. label variable PEData2019 "2019 School enrollment, primary (% gross) Gross"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable PCData2010 "2010 Primary Completion Rate"
+
+. label variable PCData2015 "2015 Primary Completion Rate"
+
+. label variable PCData2019 "2019 Primary Completion Rate"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable SEData2010 "2010 School enrollment, secondary (% gross) Gross"
+
+. label variable SEData2015 "2015 School enrollment, secondary (% gross) Gross"
+
+. label variable SEData2019 "2019 School enrollment, secondary (% gross) Gross"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable TEData2010 "2010 School enrollment, tertiary (% gross) Gross"
+
+. label variable TEData2015 "2015 School enrollment, tertiary (% gross) Gross"
+
+. label variable TEData2019 "2019 School enrollment, tertiary (% gross) Gross"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable MRData2010 "2010 Mortality Rate Data. Cause of death, by communicable diseases and maternal, prenatal a
+> nd nutrition conditions, % of total"
+note: label truncated to 80 characters
+
+. label variable MRData2015 "2015 Mortality Rate Data. Cause of death, by communicable diseases and maternal, prenatal a
+> nd nutrition conditions, % of total"
+note: label truncated to 80 characters
+
+. label variable MRData2019 "2019 Mortality Rate Data. Cause of death, by communicable diseases and maternal, prenatal a
+> nd nutrition conditions, % of total"
+note: label truncated to 80 characters
+
+. 
+end of do-file
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Data_Extract_From_World_Development_Indicators (2).xlsx", sh
+> eet("Data") firstrow clear
+(7 vars, 2,399 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep if SeriesName == "Immunization, DPT \(% of children ages 12-23 months\)"
+(2,399 observations deleted)
+
+. 
+end of do-file
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Data_Extract_From_World_Development_Indicators (2).xlsx", sh
+> eet("Data") firstrow clear
+(7 vars, 2,399 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep if SeriesName == "Immunization, DPT (% of children ages 12-23 months)"
+(2,133 observations deleted)
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. rename YR2010 IDPT2010
+
+. rename YR2015 IDPT2015
+
+. rename YR2019 IDPT2019
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable IDPT2010 "2010 Immunization, DPT (% of children ages 12-23 months)"
+
+. label variable IDPT2015 "2015 Immunization, DPT (% of children ages 12-23 months)"
+
+. label variable IDPT2019 "2019 Immunization, DPT (% of children ages 12-23 months)"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. save IDPT.dta
+file IDPT.dta saved
+
+. 
+end of do-file
+
+. save "IDPT.dta", replace
+file IDPT.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using IDPT.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. merge 1:1 CountryName using IDPT.dta
+variable _merge already defined
+r(110);
+
+end of do-file
+
+r(110);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using IDPT.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use IDPT.dta
+no; dataset in memory has changed since last saved
+r(4);
+
+end of do-file
+
+r(4);
+
+. use "/Users/jinqingmei/Desktop/stats/Final Project/IDPT.dta", clear
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Data_Extract_From_World_Development_Indicators (2).xlsx", sh
+> eet("Data") firstrow clear
+(7 vars, 2,399 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep if SeriesName == "Immunization, DPT (% of children ages 12-23 months)"
+(2,133 observations deleted)
+
+. rename YR2010 IDPT2010
+
+. rename YR2015 IDPT2015
+
+. rename YR2019 IDPT2019
+
+. label variable IDPT2010 "2010 Immunization, DPT (% of children ages 12-23 months)"
+
+. label variable IDPT2015 "2015 Immunization, DPT (% of children ages 12-23 months)"
+
+. label variable IDPT2019 "2019 Immunization, DPT (% of children ages 12-23 months)"
+
+. save IDPT.dta
+file IDPT.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop CountryCode
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. save IDPT.dta
+file IDPT.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. save "/Users/jinqingmei/Desktop/stats/Final Project/IDPT.dta", replace
+file /Users/jinqingmei/Desktop/stats/Final Project/IDPT.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using IDPT.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop SeriesCode
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop SeriesName
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. destring IDPT2010
+must specify either generate or replace option
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. real(IDPT2010)
+command real is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. generate IDPT2010_n = real(IDPT2010)
+(27 missing values generated)
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. generate IDPT2015_n = real(IDPT2015)
+(26 missing values generated)
+
+. generate IDPT2019_n = real(IDPT2019)
+(26 missing values generated)
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable IDPT2010_n "2010 Immunization, DPT (% of children ages 12-23 months)"
+
+. label variable IDPT2015_n "2015 Immunization, DPT (% of children ages 12-23 months)"
+
+. label variable IDPT2019_n "2019 Immunization, DPT (% of children ages 12-23 months)"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop IDPT2010 IDPT2015 IDPT2019
+
+. 
+end of do-file
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Data_Extract_From_World_Development_Indicators (2).xlsx", sh
+> eet("Data") firstrow clear
+(7 vars, 2,399 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep if SeriesName == "Immunization, measles (% of children ages 12-23 months)"
+(2,133 observations deleted)
+
+. rename YR2010 IMea2010
+
+. rename YR2015 IMea2015
+
+. rename YR2019 IMea2019
+
+. drop CountryCode SeriesCode
+
+. drop SeriesCode 
+variable SeriesCode not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. generate IMea2010_n = real(IMea2010)
+(27 missing values generated)
+
+. generate IMea2015_n = real(IMea2015)
+(26 missing values generated)
+
+. generate IMea2019_n = real(IMea2019)
+(26 missing values generated)
+
+. 
+. label variable IMea2010_n "2010 Immunization, measles (% of children ages 12-23 months)"
+
+. label variable IMea2015_n "2015 Immunization, measles (% of children ages 12-23 months)"
+
+. label variable IMea2019_n "2019 Immunization, measles (% of children ages 12-23 months)"
+
+. 
+. drop IMea2010 IMea2015 IMea2019
+
+. save IMea.dta
+file IMea.dta saved
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop SeriesName
+
+. 
+end of do-file
+
+. save "IMea.dta", replace
+file IMea.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using IMea.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Data_Extract_From_World_Development_Indicators (2).xlsx", sh
+> eet("Data") firstrow clear
+(7 vars, 2,399 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep if SeriesName == "Total alcohol consumption per capita (liters of pure alcohol, projected estimat
+> es, 15+ years of age)"
+(2,133 observations deleted)
+
+. rename YR2010 AlC2010
+
+. rename YR2015 AlC2015
+
+. rename YR2019 AlC2019
+
+. drop CountryCode SeriesCode
+
+. * drop SeriesCode 
+. drop SeriesName
+
+. generate AlC2010_n = real(AlC2010)
+(32 missing values generated)
+
+. generate AlC2015_n = real(AlC2015)
+(31 missing values generated)
+
+. generate AlC2019_n = real(AlC2019)
+(266 missing values generated)
+
+. 
+. label variable AlC2010_n "2010 Total alcohol consumption per capita (liters of pure alcohol, projected
+>  estimates, 15+ years of age)"
+note: label truncated to 80 characters
+
+. label variable AlC2015_n "2015 Total alcohol consumption per capita (liters of pure alcohol, projected
+>  estimates, 15+ years of age)"
+note: label truncated to 80 characters
+
+. label variable AlC2019_n "2019 Total alcohol consumption per capita (liters of pure alcohol, projected
+>  estimates, 15+ years of age)"
+note: label truncated to 80 characters
+
+. 
+. drop AlC2010 AlC2015 AlC2019
+
+. save AlC2010.dta
+file AlC2010.dta saved
+
+. 
+end of do-file
+
+. save "AlC2010.dta", replace
+file AlC2010.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using AlC.dta
+file AlC.dta not found
+r(601);
+
+end of do-file
+
+r(601);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+variable _merge not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. merge 1:1 CountryName using AlC2010.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Data_Extract_From_World_Development_Indicators (2).xlsx", sh
+> eet("Data") firstrow clear
+(7 vars, 2,399 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep if SeriesName == "Current health expenditure (% of GDP)"
+(2,133 observations deleted)
+
+. rename YR2010 HE2010
+
+. rename YR2015 HE2015
+
+. rename YR2019 HE2019
+
+. drop CountryCode SeriesCode
+
+. * drop SeriesCode 
+. drop SeriesName
+
+. generate HE2010_n = real(HE2010)
+(30 missing values generated)
+
+. generate HE2015_n = real(HE2015)
+(31 missing values generated)
+
+. generate HE2019_n = real(HE2019)
+(32 missing values generated)
+
+. 
+. label variable HE2010_n "2010 Current health expenditure (% of GDP)"
+
+. label variable HE2015_n "2015 Current health expenditure (% of GDP)"
+
+. label variable HE2019_n "2019 Current health expenditure (% of GDP)"
+
+. 
+. drop HE2010 HE2015 HE2019
+
+. 
+end of do-file
+
+. save "/Users/jinqingmei/Desktop/stats/Final Project/HE.dta"
+file /Users/jinqingmei/Desktop/stats/Final Project/HE.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. drop _merge
+
+. merge 1:1 CountryName using HE2010.dta
+file HE2010.dta not found
+r(601);
+
+end of do-file
+
+r(601);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. merge 1:1 CountryName using HE.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Data_Extract_From_World_Development_Indicators (2).xlsx", sh
+> eet("Data") firstrow clear
+(7 vars, 2,399 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep if SeriesName == "Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)"
+(2,133 observations deleted)
+
+. rename YR2010 MRC2010
+
+. rename YR2015 MRC015
+
+. rename YR2019 MRC2019
+
+. drop CountryCode SeriesCode
+
+. * drop SeriesCode 
+. drop SeriesName
+
+. generate MRC2010_n = real(MRC2010)
+(35 missing values generated)
+
+. generate MRC2015_n = real(MRC2015)
+MRC2015 not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Data_Extract_From_World_Development_Indicators (2).xlsx", sh
+> eet("Data") firstrow clear
+(7 vars, 2,399 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep if SeriesName == "Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)"
+(2,133 observations deleted)
+
+. rename YR2010 MRC2010
+
+. rename YR2015 MRC2015
+
+. rename YR2019 MRC2019
+
+. drop CountryCode SeriesCode
+
+. * drop SeriesCode 
+. drop SeriesName
+
+. generate MRC2010_n = real(MRC2010)
+(35 missing values generated)
+
+. generate MRC2015_n = real(MRC2015)
+(35 missing values generated)
+
+. generate MRC2019_n = real(MRC2019)
+(35 missing values generated)
+
+. 
+. label variable MRC2010_n "2010 Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 7
+> 0 (%)"
+note: label truncated to 80 characters
+
+. label variable MRC2015_n "2015 Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 7
+> 0 (%)"
+note: label truncated to 80 characters
+
+. label variable MRC2019_n "2019 Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 7
+> 0 (%)"
+note: label truncated to 80 characters
+
+. 
+. drop MRC2010 MRC2015 MRC2019
+
+. saveMRC.dta
+saveMRC.dta is not a valid command name
+r(199);
+
+end of do-file
+
+r(199);
+
+. save "/Users/jinqingmei/Desktop/stats/Final Project/MRC.dta"
+file /Users/jinqingmei/Desktop/stats/Final Project/MRC.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. drop _merge
+
+. merge 1:1 CountryName using HE.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+no; dataset in memory has changed since last saved
+r(4);
+
+end of do-file
+
+r(4);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop _merge
+
+. merge 1:1 CountryName using MRC.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
+. 
+. import excel "/Users/jinqingmei/Downloads/Population.xls", sheet("Data") firstrow clear
+(65 vars, 266 obs)
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. keep CountryName IndicatorName BC BH BL
+
+. rename BC PPLData2010
+
+. rename BH PPLData2015
+
+. rename BL PPLData2019
+
+. label variable TPPLData2010 "2010 Population, total"
+variable TPPLData2010 not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable PPLData2010 "2010 Population, total"
+
+. label variable PPLData2015 "2015 Population, total"
+
+. label variable PPLData2019 "2019 Population, total"
+
+. save PPL.dta
+file PPL.dta saved
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop IndicatorName
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. save PPL.dta
+file PPL.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. save "PPL.dta", replace
+file PPL.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. use Combined.dta
+
+. drop _merge
+
+. merge 1:1 CountryName using PPL.dta
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               266  (_merge==3)
+    -----------------------------------------
+
+. save Combined.dta
+file Combined.dta already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable MRData2010 "2010 Mortality Rate Data. Cause of death, by communicable diseases and mate
+> rnal, prenatal and nutrition conditions, % of total"
+note: label truncated to 80 characters
+
+. label variable MRData2015 "2015 Mortality Rate Data. Cause of death, by communicable diseases and mate
+> rnal, prenatal and nutrition conditions, % of total"
+note: label truncated to 80 characters
+
+. label variable MRData2019 "2019 Mortality Rate Data. Cause of death, by communicable diseases and mate
+> rnal, prenatal and nutrition conditions, % of total"
+note: label truncated to 80 characters
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable EEData2010 "2010 Government Expenditure on Education Data. Government expenditure on ed
+> ucation, total, % of government expenditure."
+note: label truncated to 80 characters
+
+. label variable EEData2015 "2015 Government Expenditure on Education Data. Government expenditure on ed
+> ucation, total, % of government expenditure."
+note: label truncated to 80 characters
+
+. label variable EEData2019 "2019 Government Expenditure on Education Data. Government expenditure on ed
+> ucation, total, % of government expenditure."
+note: label truncated to 80 characters
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable PCData2010 "2010 Primary Completion Rate"
+
+. label variable PCData2015 "2015 Primary Completion Rate"
+
+. label variable PCData2019 "2019 Primary Completion Rate"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable PEData2010 "2010 School enrollment, primary (% gross) Gross"
+
+. label variable PEData2015 "2015 School enrollment, primary (% gross) Gross"
+
+. label variable PEData2019 "2019 School enrollment, primary (% gross) Gross"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable SEData2010 "2010 School enrollment, secondary (% gross) Gross"
+
+. label variable SEData2015 "2015 School enrollment, secondary (% gross) Gross"
+
+. label variable SEData2019 "2019 School enrollment, secondary (% gross) Gross"
+
+. 
+end of do-file
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. label variable TEData2010 "2010 School enrollment, tertiary (% gross) Gross"
+
+. label variable TEData2015 "2015 School enrollment, tertiary (% gross) Gross"
+
+. label variable TEData2019 "2019 School enrollment, tertiary (% gross) Gross"
+
+. 
+end of do-file
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
+. do "/var/folders/bk/dm3lv27n4710dnyr8gxd3t9m0000gn/T//SD01356.000000"
+
+. drop IndicatorName
+
+. 
+end of do-file
+
+. save "Combined.dta", replace
+file Combined.dta saved
+
